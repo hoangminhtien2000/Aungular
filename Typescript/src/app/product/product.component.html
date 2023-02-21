@@ -1,0 +1,100 @@
+<div class="container-full" style="margin: 0px 150px">
+  <br>
+  <h2>Danh sách hàng người yêu của C0922h1</h2>
+  <br>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+    Create Hàng
+  </button>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>img</th>
+      <th>price</th>
+      <th>edit</th>
+      <th>delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td><img src="{{p.img}}" width="220" height="300"></td>
+      <td>{{p.price}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="create">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Tạo Hàng</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <input placeholder="nhập id" [(ngModel)]="product.id"><br>
+        <input placeholder="nhập name" [(ngModel)]="product.name"><br>
+        <input placeholder="nhập img" [(ngModel)]="product.img"><br>
+        <input placeholder="nhập price" [(ngModel)]="product.price"><br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createProduct()">Submit Hàng
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="edit">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Tạo Hàng</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <input placeholder="nhập id" [(ngModel)]="product.id"><br>
+        <input placeholder="nhập name" [(ngModel)]="product.name"><br>
+        <input placeholder="nhập img" [(ngModel)]="product.img"><br>
+        <input placeholder="nhập price" [(ngModel)]="product.price"><br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editProduct(product.id)">Update
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
