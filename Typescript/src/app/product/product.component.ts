@@ -33,15 +33,13 @@ export class ProductComponent {
     this.products.splice(index1,1);
   }
 
-  editProduct(id2: number){
-    // let productEdit = new Product(this.product.id,this.product.name,this.product.img,this.product.price);
-    let index2= this.findProduct(id2);
-    // this.products[id2]=productEdit;
-    this.products.splice(index2,1);
-    let productEdit2 = new Product(id2,this.product.name,this.product.img,this.product.price);
-    this.products.push(productEdit2);
-
+  showEdit(id1: number){
+    let index2= this.findProduct(id1);
+    this.product=this.products[index2];
   }
 
-
+  editProduct(id2: number){
+    let productEdit = new Product(this.product.id,this.product.name,this.product.img,this.product.price);
+    this.products.splice(this.findProduct(id2),1,productEdit);
+  }
 }

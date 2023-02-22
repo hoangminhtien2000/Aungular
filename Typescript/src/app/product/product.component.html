@@ -25,7 +25,7 @@
       <td><img src="{{p.img}}" width="220" height="300"></td>
       <td>{{p.price}}</td>
       <td>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit" (click)="showEdit(p.id)">
           Edit
         </button>
       </td>
@@ -82,7 +82,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <input placeholder="nhập id" [(ngModel)]="product.id"><br>
+        <input placeholder="nhập id" [(ngModel)]="product.id" readonly><br>
         <input placeholder="nhập name" [(ngModel)]="product.name"><br>
         <input placeholder="nhập img" [(ngModel)]="product.img"><br>
         <input placeholder="nhập price" [(ngModel)]="product.price"><br>
