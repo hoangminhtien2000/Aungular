@@ -16,7 +16,14 @@ export class ProductComponent {
   constructor() { }
 
   createProduct(){
-    let productNew = new Product(this.product.id,this.product.name,this.product.img,this.product.price);
+    let index1;
+    if(this.products.length<=0){
+      index1=1;
+    }
+    else {
+      index1=this.products[this.products.length-1].id+1;
+    }
+    let productNew = new Product(index1,this.product.name,this.product.img,this.product.price);
     this.products.push(productNew);
   }
 
@@ -41,5 +48,6 @@ export class ProductComponent {
   editProduct(id2: number){
     let productEdit = new Product(this.product.id,this.product.name,this.product.img,this.product.price);
     this.products.splice(this.findProduct(id2),1,productEdit);
+    this.product=new Product(0,"0","0",0);;
   }
 }
