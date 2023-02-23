@@ -1,0 +1,9 @@
+<h1>Edit Product</h1>
+<form [formGroup]="formEdit" (submit)="edit()">
+  <input placeholder="nhập id" formControlName="id"><br>
+  <input placeholder="nhập name" formControlName="name"><br>
+  <input placeholder="nhập img" formControlName="img"><br>
+  <input placeholder="nhập price" formControlName="price"><br>
+  <button type="submit" class="btn btn-primary">Submit Hàng</button>
+
+</form>

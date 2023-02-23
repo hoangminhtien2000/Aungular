@@ -1,0 +1,32 @@
+<div class="container-full" style="margin: 0px 150px">
+  <br>
+  <h2>Danh sách hàng người yêu của C0922h1</h2>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>img</th>
+      <th>price</th>
+      <th>edit</th>
+      <th>delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td><img src="{{p.img}}" width="220" height="300"></td>
+      <td>{{p.price}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" routerLink="/edit/{{p.id}}">Edit</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete()" >Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
