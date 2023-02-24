@@ -20,6 +20,7 @@ export class EditComponent implements OnInit{
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id!= null){
       this.product = this.productService.findProductById(+this.id);
+
       this.formEdit = new FormGroup({
         id: new FormControl(this.product?.id, [Validators.required,Validators.max(50)]),
         name: new FormControl(this.product?.name),
@@ -30,14 +31,7 @@ export class EditComponent implements OnInit{
   }
 
   edit(){
-    // this.productService.products.splice(this.productService.findIndexById(+this.id),1,this.formEdit.value);
-// console.log(this.formEdit.value);
-//     this.id = this.route.snapshot.paramMap.get('id');
-// console.log(+this.id);
-// console.log(this.productService.findIndexById(+this.id));
-//     console.log(this.productService.findProductById(+this.id));
-//     this.product = this.productService.findProductById(+this.id);
-    console.log(this.productService.findIndexById(+this.id));
+    this.productService.editProduct(+this.id,this.formEdit.value);
   }
 
 

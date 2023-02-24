@@ -17,15 +17,17 @@ export class ProductService {
     this.products.push(product);
   }
 
-  findProductById(id: number): Product | undefined {
-    return this.products.find(p => p.id = id);
+  editProduct(id2: number,productEdit:Product){
+       this.products.splice(this.findIndexById(id2),1,productEdit);
+  }
 
-    // for (const p of this.products) {
-    //   if (p.id == id){
-    //     return p;
-    //   }
-    // }
-    // return undefined;
+  findProductById(id: number): Product | undefined {
+    for (const p of this.products) {
+      if (p.id == id) {
+        return p;
+      }
+    }
+    return undefined;
   }
 
   findIndexById(index: number): number {

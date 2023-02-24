@@ -15,7 +15,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let p of products">
-      <td>{{p.id}}</td>
+      <td >{{p.id}}</td>
       <td>{{p.name}}</td>
       <td><img src="{{p.img}}" width="220" height="300"></td>
       <td>{{p.price}}</td>
@@ -23,7 +23,7 @@
         <button type="button" class="btn btn-warning" routerLink="/edit/{{p.id}}">Edit</button>
       </td>
       <td>
-        <button type="button" class="btn btn-danger" (click)="delete()" >Delete</button>
+        <button type="button" class="btn btn-danger" (click)="delete(p.id)" >Delete</button>
       </td>
     </tr>
     </tbody>

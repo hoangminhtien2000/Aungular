@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../service/ProductService";
 import {Product} from "../../model/Product";
 import {ActivatedRoute} from "@angular/router";
-
+declare var $:any;
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',
@@ -15,13 +15,13 @@ export class ShowComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
     this.products = this.productService.products;
   }
 
 
-  delete(){
-    this.id = this.route.snapshot.paramMap.get('id');
-    console.log(+this.id);
+  delete(id:number){
+   this.products.splice(this.productService.findIndexById(id),1);
   }
 
 
