@@ -1,0 +1,12 @@
+<h1>Create Product</h1>
+<form [formGroup]="formCreate" (submit)="create()">
+  <input placeholder="nhập name" formControlName="name"><br>
+  <input placeholder="nhập img" formControlName="img"><br>
+  <input placeholder="nhập price" formControlName="price"><br>
+<!--  <input placeholder="nhập status" formControlName="status"><br>-->
+  <select formControlName="status">
+    <option value="true" selected>true</option>
+    <option value="false">false</option>
+  </select><br>
+  <button type="submit" class="btn btn-primary">Submit Hàng</button>
+</form>

@@ -1,12 +1,117 @@
+<!--<div class="container-full" style="margin: 0px 150px">-->
+<!--  <br>-->
+<!--  <h2>Danh sách hàng người yêu của C0922h1</h2>-->
+<!--  <br>-->
+<!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">-->
+<!--    Create Hàng-->
+<!--  </button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <table class="table table-striped">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>id</th>-->
+<!--      <th>name</th>-->
+<!--      <th>img</th>-->
+<!--      <th>price</th>-->
+<!--      <th>edit</th>-->
+<!--      <th>delete</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr *ngFor="let p of products">-->
+<!--      <td>{{p.id}}</td>-->
+<!--      <td>{{p.name}}</td>-->
+<!--      <td><img src="{{p.img}}" width="220" height="300"></td>-->
+<!--      <td>{{p.price}}</td>-->
+<!--      <td>-->
+<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit" (click)="showEdit(p.id)">-->
+<!--          Edit-->
+<!--        </button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; The Modal &ndash;&gt;-->
+<!--<div class="modal" id="create">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+
+<!--      &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Tạo Hàng</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--      <div class="modal-body">-->
+<!--&lt;!&ndash;        <input placeholder="nhập id" [(ngModel)]="product.id"><br>&ndash;&gt;-->
+<!--        <input placeholder="nhập name" [(ngModel)]="product.name"><br>-->
+<!--        <input placeholder="nhập img" [(ngModel)]="product.img"><br>-->
+<!--        <input placeholder="nhập price" [(ngModel)]="product.price"><br>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createProduct()">Submit Hàng-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; The Modal &ndash;&gt;-->
+<!--<div class="modal" id="edit">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+
+<!--      &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Tạo Hàng</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--      <div class="modal-body">-->
+<!--&lt;!&ndash;        <input placeholder="nhập id" [(ngModel)]="product.id" readonly><br>&ndash;&gt;-->
+<!--        <input placeholder="nhập name" [(ngModel)]="product.name"><br>-->
+<!--        <input placeholder="nhập img" [(ngModel)]="product.img"><br>-->
+<!--        <input placeholder="nhập price" [(ngModel)]="product.price"><br>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editProduct(product.id)">Update-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<!--Angular form-->
 <div class="container-full" style="margin: 0px 150px">
   <br>
   <h2>Danh sách hàng người yêu của C0922h1</h2>
   <br>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+  <hr>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Create Hàng
   </button>
   <br>
-  <br>
+  <hr>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -25,9 +130,7 @@
       <td><img src="{{p.img}}" width="220" height="300"></td>
       <td>{{p.price}}</td>
       <td>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit" (click)="showEdit(p.id)">
-          Edit
-        </button>
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit" (click)="showEdit(p.id)">Edit</button>
       </td>
       <td>
         <button type="button" class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button>
@@ -39,7 +142,48 @@
 
 
 <!-- The Modal -->
-<div class="modal" id="create">
+<!--<div class="modal" id="myModal">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+
+<!--      &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Tạo Hàng</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--      <div class="modal-body">-->
+<!--        <form #formCreate="ngForm" (submit)="createProduct(formCreate)">-->
+<!--          <input placeholder="nhập id" ngModel name="id" required #id="ngModel"><br>-->
+<!--          <p *ngIf="!id.valid && id.touched" style="color: red">Không được null</p>-->
+
+<!--          <input placeholder="nhập name" ngModel name="name" required #name="ngModel"><br>-->
+<!--          <p *ngIf="!name.valid && name.touched" style="color: red">Không được null</p>-->
+
+<!--          <input placeholder="nhập img" ngModel name="img" required #img="ngModel"><br>-->
+<!--          <p *ngIf="!img.valid && img.touched" style="color: red">Không được null</p>-->
+
+<!--          <input placeholder="nhập price" ngModel name="price" required #price="ngModel"><br>-->
+<!--          <p *ngIf="price?.errors?.required && price.touched" style="color: red">Không được null</p>-->
+
+<!--          <button type="submit" class="btn btn-primary">Submit Hàng</button>-->
+
+<!--        </form>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--Create Product-->
+<div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -51,17 +195,21 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-<!--        <input placeholder="nhập id" [(ngModel)]="product.id"><br>-->
-        <input placeholder="nhập name" [(ngModel)]="product.name"><br>
-        <input placeholder="nhập img" [(ngModel)]="product.img"><br>
-        <input placeholder="nhập price" [(ngModel)]="product.price"><br>
+        <form [formGroup]="formCreate" (submit)="createProduct()">
+          <input placeholder="nhập id" formControlName="id"><br>
+          <p *ngIf="formCreate.get('id')?.errors?.['required'] && formCreate.get('id')?.touched" style="color: red">Không null</p>
+          <p *ngIf="formCreate.get('id')?.errors?.['max'] && formCreate.get('id')?.touched" style="color: red">max là 50</p>
+          <input placeholder="nhập name" formControlName="name"><br>
+          <input placeholder="nhập img" formControlName="img"><br>
+          <input placeholder="nhập price" formControlName="price"><br>
+          <button type="submit" class="btn btn-primary">Submit Hàng</button>
+
+        </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createProduct()">Submit Hàng
-        </button>
       </div>
 
     </div>
@@ -69,7 +217,7 @@
 </div>
 
 
-<!-- The Modal -->
+<!--Edit Product-->
 <div class="modal" id="edit">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -82,17 +230,21 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-<!--        <input placeholder="nhập id" [(ngModel)]="product.id" readonly><br>-->
-        <input placeholder="nhập name" [(ngModel)]="product.name"><br>
-        <input placeholder="nhập img" [(ngModel)]="product.img"><br>
-        <input placeholder="nhập price" [(ngModel)]="product.price"><br>
+        <form [formGroup]="formEdit" (submit)="editProduct()">
+          <input placeholder="nhập id" formControlName="id" value="{{product.id}}"><br>
+          <p *ngIf="formEdit.get('id')?.errors?.['required'] && formEdit.get('id')?.touched" style="color: red">Không null</p>
+          <p *ngIf="formEdit.get('id')?.errors?.['max'] && formEdit.get('id')?.touched" style="color: red">max là 50</p>
+          <input placeholder="nhập name" formControlName="name" value="{{product.name}}"><br>
+          <input placeholder="nhập img" formControlName="img" value="{{product.img}}"><br>
+          <input placeholder="nhập price" formControlName="price" value="{{product.price}}"><br>
+          <button type="submit" class="btn btn-primary">Submit Hàng</button>
+
+        </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editProduct(product.id)">Update
-        </button>
       </div>
 
     </div>

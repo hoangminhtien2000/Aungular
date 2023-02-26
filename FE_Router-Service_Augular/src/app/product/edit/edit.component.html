@@ -1,0 +1,15 @@
+<h1>Edit Product</h1>
+
+<form [formGroup]="formEdit" *ngIf="formEdit" >
+  <input placeholder="nhập id" formControlName="id" hidden><br>
+  <input placeholder="nhập name" formControlName="name"><br>
+  <input placeholder="nhập img" formControlName="img"><br>
+  <input placeholder="nhập price" formControlName="price"><br>
+<!--  <input placeholder="nhập status" formControlName="status"><br>-->
+  <select formControlName="status">
+    <option value="true" selected>true</option>
+    <option value="false">false</option>
+  </select><br>
+  <button type="submit" class="btn btn-primary" (click)="edit()">Submit Hàng</button>
+
+</form>
