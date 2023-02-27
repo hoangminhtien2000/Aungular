@@ -24,7 +24,6 @@ export class EditComponent implements OnInit {
       this.productService.findById(+this.id).subscribe((data) => {
         this.product = data;
       this.formEdit = new FormGroup({
-        id1: new FormControl(this.product?.id),
         id: new FormControl(this.product?.id),
         name: new FormControl(this.product?.name),
         img: new FormControl(this.product?.img),

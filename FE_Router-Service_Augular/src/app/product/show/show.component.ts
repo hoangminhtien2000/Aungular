@@ -15,6 +15,10 @@ export class ShowComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAll();
+  }
+
+  getAll(){
     this.productService.getAll().subscribe(data => {
       this.products = data;
     });
@@ -22,9 +26,7 @@ export class ShowComponent implements OnInit {
 
   delete(id: number) {
     this.productService.delete(id).subscribe(() => {
-      this.productService.getAll().subscribe(data => {
-        this.products = data;
-      });
+     this.getAll();
     })
   }
 
