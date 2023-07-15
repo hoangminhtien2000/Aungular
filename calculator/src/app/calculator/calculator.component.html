@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="calc-body">
+    <div class="calc-screen">
+      <div class="calc-funcT">{{funcT}}</div>
+      <div class="calc-typed">{{calValue}}</div>
+    </div>
+    <div class="calc-button-row">
+      <button class="button" (click)="onClickVal('%','function')">%</button>
+      <button class="button f" >CE</button>
+      <button class="button" (click)="onClickVal('c','function')">C</button>
+      <button class="button f">D</button>
+    </div>
+    <div class="calc-button-row">
+      <button class="button f">1/x</button>
+      <button class="button f">x²</button>
+      <button class="button f">&radic;</button>
+      <button class="button" (click)="onClickVal('/','function')">/</button>
+    </div>
+    <div class="calc-button-row">
+      <button class="button" (click)="onClickVal('7','number')">7</button>
+      <button class="button" (click)="onClickVal('8','number')">8</button>
+      <button class="button" (click)="onClickVal('9','number')">9</button>
+      <button class="button" (click)="onClickVal('*','function')">*</button>
+    </div>
+    <div class="calc-button-row">
+      <button class="button" (click)="onClickVal('4','number')">4</button>
+      <button class="button" (click)="onClickVal('5','number')">5</button>
+      <button class="button" (click)="onClickVal('6','number')">6</button>
+      <button class="button" (click)="onClickVal('-','function')">−</button>
+    </div>
+    <div class="calc-button-row">
+      <button class="button" (click)="onClickVal('1','number')">1</button>
+      <button class="button" (click)="onClickVal('2','number')">2</button>
+      <button class="button" (click)="onClickVal('3','number')">3</button>
+      <button class="button" (click)="onClickVal('+','function')">+</button>
+    </div>
+    <div class="calc-button-row">
+      <button class="button f">+/-</button>
+      <button class="button" (click)="onClickVal('0','number')">0</button>
+      <button class="button f" (click)="onClickVal('.','function')">.</button>
+      <button class="button b" (click)="onClickVal('=','function')">=</button>
+    </div>
+  </div>
+</div>
+

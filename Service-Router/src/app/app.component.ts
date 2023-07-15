@@ -24,6 +24,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // $('#tien').text('Welcome Home');
+    $('#tien').text('Welcome Home');
+
   }
 }

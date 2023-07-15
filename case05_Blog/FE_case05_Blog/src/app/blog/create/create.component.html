@@ -1,0 +1,16 @@
+<h1>Create Blog</h1>
+
+<form [formGroup]="formCreate" *ngIf="formCreate" >
+<!--  <input placeholder="id_blog" formControlName="id_blog"><br>-->
+  <input placeholder="name_blog" formControlName="name_blog"><br>
+  <input placeholder="content" formControlName="content" style="width: 300px" ><br>
+  <input placeholder="content_full" formControlName="content_full" style="width: 300px" ><br>
+  <input placeholder="img_blog" formControlName='img_blog'><br>
+  <input placeholder="like1" formControlName="like1"><br>
+  <fieldset formGroupName="category">
+    <input placeholder="category" formControlName="id_category"><br>
+  </fieldset>
+<!--  <input placeholder="id_blog" formControlName="comments"><br>-->
+  <button type="submit" (click)="create()">Create</button>
+
+</form>

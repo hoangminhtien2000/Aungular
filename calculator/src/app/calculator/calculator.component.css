@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #EAEBEC;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+}
+
+.calc-body {
+  width: 325px;
+  margin: auto;
+  min-height: 300px;
+  border: solid 1px #3A4655;
+  box-shadow: 0 2px 10px -2px black;
+}
+
+.calc-screen {
+  background: #f8fafc;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+}
+
+.calc-funcT{
+  text-align: right;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #c4c1c1;
+
+}
+
+.calc-typed {
+  margin-top: 15px;
+  font-size: 32px;
+  text-align: right;
+  color: #000000;
+}
+
+.calc-button-row {
+  width: 100%;
+  background: #f8fafc;
+  padding-bottom: 3px;
+  padding-left: 5px;
+
+}
+
+.button {
+  width: 24%;
+  background: #fbfbfc;
+  color: #000000;
+  padding: 10px;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 3px;
+  border: 1px solid #e4e4e8;;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+
+}
+
+.button:hover {
+  background: #f8fafc;
+
+}
+
+.button.b {
+  color: #ffffff;
+  background: #10447b;
+}
+
+.button.b:hover {
+  background: #2665a8;
+}
+
+.button.f {
+  color: #000000;
+  background: #fbfbfc;
+}
+
+.button.f:hover {
+  background: #f60404;
+}
